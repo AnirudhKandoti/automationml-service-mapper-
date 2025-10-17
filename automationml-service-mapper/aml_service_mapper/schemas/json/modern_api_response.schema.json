@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModernOrder",
+  "type": "object",
+  "properties": {
+    "user": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string"
+        },
+        "full_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "user_id"
+      ]
+    },
+    "order": {
+      "type": "object",
+      "properties": {
+        "total_amount": {
+          "type": "number"
+        },
+        "lines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              },
+              "quantity": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "sku",
+              "quantity"
+            ]
+          }
+        }
+      },
+      "required": [
+        "total_amount",
+        "lines"
+      ]
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "policy_applied": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "policy_applied"
+      ]
+    }
+  },
+  "required": [
+    "user",
+    "order",
+    "meta"
+  ]
+}

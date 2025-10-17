@@ -1,0 +1,44 @@
+
+openapi: 3.0.3
+info:
+  title: AutomationML Service Mapper – Legacy API Transformation Prototype
+  version: "0.1.1"
+paths:
+  /v1/transform/legacy-to-modern:
+    post:
+      summary: Transform a legacy payload into modern API shape
+      parameters:
+        - in: header
+          name: X-Data-Policy
+          required: false
+          schema:
+            type: string
+            enum: [public, internal]
+          description: Data governance policy
+        - in: header
+          name: X-API-Key
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '../aml_service_mapper/schemas/json/legacy_api_request.schema.json'
+          application/xml:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: Transformed payload in modern shape
+          content:
+            application/json:
+              schema:
+                $ref: '../aml_service_mapper/schemas/json/modern_api_response.schema.json'
+        '401':
+          description: Unauthorized
+        '415':
+          description: Unsupported Media Type
+        '422':
+          description: Unprocessable legacy input

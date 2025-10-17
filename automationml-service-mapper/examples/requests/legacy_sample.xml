@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LegacyOrderRequest>
+  <customer>
+    <id>CUST-123</id>
+    <name>Jane Doe</name>
+    <email>jane@example.com</email>
+  </customer>
+  <order>
+    <total>199.99</total>
+    <credit_card_number>4111111111111111</credit_card_number>
+    <items>
+      <item>
+        <sku>SKU-1</sku>
+        <qty>2</qty>
+      </item>
+      <item>
+        <sku>SKU-2</sku>
+        <qty>1</qty>
+      </item>
+    </items>
+  </order>
+</LegacyOrderRequest>

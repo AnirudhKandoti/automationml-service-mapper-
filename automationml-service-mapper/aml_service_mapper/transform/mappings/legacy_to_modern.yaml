@@ -1,0 +1,29 @@
+
+# Declarative mapping from legacy -> modern
+mappings:
+  - from: "customer.id"
+    to: "user.user_id"
+    policy_tag: "ID"
+
+  - from: "customer.name"
+    to: "user.full_name"
+    policy_tag: "PII"
+
+  - from: "order.total"
+    to: "order.total_amount"
+    transform: "float"
+
+  - map:
+      from: "order.items"
+      to: "order.lines"
+      each:
+        - { from: "sku", to: "sku" }
+        - { from: "qty", to: "quantity", transform: "int" }
+
+  - const:
+      to: "meta.source"
+      value: "legacy_v1"
+
+  - drop:
+      from: "order.credit_card_number"
+      policy_tag: "SENSITIVE"

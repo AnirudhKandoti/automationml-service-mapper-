@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic>=2
+jsonschema>=4.22.0
+xmlschema>=3.2.4
+PyYAML>=6.0.1
+xmltodict>=0.13.0
+python-dotenv>=1.0.1
+httpx>=0.27.0
+pytest>=8

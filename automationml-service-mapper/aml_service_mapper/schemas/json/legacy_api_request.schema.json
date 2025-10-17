@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegacyOrderRequest",
+  "type": "object",
+  "properties": {
+    "customer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "order": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": [
+            "number",
+            "string"
+          ]
+        },
+        "credit_card_number": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "sku": {
+                "type": "string"
+              },
+              "qty": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "sku",
+              "qty"
+            ]
+          }
+        }
+      },
+      "required": [
+        "total",
+        "items"
+      ]
+    }
+  },
+  "required": [
+    "customer",
+    "order"
+  ]
+}

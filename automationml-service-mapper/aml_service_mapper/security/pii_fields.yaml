@@ -1,0 +1,15 @@
+
+# Tag semantics used by policies:
+# - PII: personal identifiable information (names, emails, phones, addresses)
+# - SENSITIVE: secrets, tokens, payment data
+# - ID: identifiers that are permissible in public if necessary
+# - PUBLIC: explicitly safe to expose
+
+# Example explicit allowlist/denylist tags per policy
+policies:
+  public:
+    allow_tags: ["PUBLIC", "ID"]
+    deny_tags: ["PII", "SENSITIVE"]
+  internal:
+    allow_tags: ["PUBLIC", "ID", "PII"]
+    deny_tags: ["SENSITIVE"]

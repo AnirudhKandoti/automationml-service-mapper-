@@ -1,0 +1,22 @@
+{
+  "user": {
+    "user_id": "CUST-123"
+  },
+  "order": {
+    "total_amount": 199.99,
+    "lines": [
+      {
+        "sku": "SKU-1",
+        "quantity": 2
+      },
+      {
+        "sku": "SKU-2",
+        "quantity": 1
+      }
+    ]
+  },
+  "meta": {
+    "source": "legacy_v1",
+    "policy_applied": "public"
+  }
+}

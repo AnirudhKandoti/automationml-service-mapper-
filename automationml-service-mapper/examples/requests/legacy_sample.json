@@ -1,0 +1,21 @@
+{
+  "customer": {
+    "id": "CUST-123",
+    "name": "Jane Doe",
+    "email": "jane@example.com"
+  },
+  "order": {
+    "total": "199.99",
+    "credit_card_number": "4111111111111111",
+    "items": [
+      {
+        "sku": "SKU-1",
+        "qty": 2
+      },
+      {
+        "sku": "SKU-2",
+        "qty": 1
+      }
+    ]
+  }
+}
